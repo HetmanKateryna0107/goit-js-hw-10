@@ -63,7 +63,9 @@ else{
 // }
 })
 }
-else{ Notiflix.Notify.failure('The field is empty')}
+else{ Notiflix.Notify.failure('The field is empty')
+info.innerHTML="" 
+    itemsList.innerHTML=""}
 }
 
 
