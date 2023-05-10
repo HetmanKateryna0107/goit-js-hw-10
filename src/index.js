@@ -13,7 +13,9 @@ const info = document.querySelector(".country-info");
 
 function countrysSeartch(e){
 e.preventDefault()
+if(e.target.value!==""){
 const data=fetchCountries(e.target.value)
+
 data.then(country=>{
     if(country.length === 1){
         info.innerHTML="" 
@@ -51,8 +53,17 @@ else if(country.length>10){
     itemsList.innerHTML=""
     Notiflix.Notify.info("Too many matches found. Please enter a more specific name.")
 }
+else{
+    info.innerHTML="" 
+        itemsList.innerHTML=""
+}
+// else if(country.value===" "){
+//     info.innerHTML="" 
+//     itemsList.innerHTML=""
+// }
 })
-
+}
+else{ Notiflix.Notify.failure('The field is empty')}
 }
 
 
